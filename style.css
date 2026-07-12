@@ -711,6 +711,24 @@ a.contact__row:hover { background: rgba(255, 255, 255, 0.12); }
   padding-top: 6rem;
 }
 
+.gallery__category {
+  margin-bottom: 3rem;
+}
+
+.gallery__category:last-child {
+  margin-bottom: 0;
+}
+
+.gallery__category-head {
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.gallery__category-head h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0;
+}
+
 .gallery .section__head { margin-bottom: 3rem; }
 
 .gallery__board {
@@ -788,6 +806,10 @@ a.contact__row:hover { background: rgba(255, 255, 255, 0.12); }
   cursor: default;
   border: 2px dashed rgba(34, 49, 64, 0.2);
   box-shadow: none;
+}
+
+.polaroid--placeholder-lg {
+  width: clamp(280px, 70vw, 480px);
 }
 
 .polaroid--placeholder:hover { transform: rotate(-1deg); box-shadow: none; }
