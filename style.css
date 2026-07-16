@@ -1142,3 +1142,279 @@ a.contact__row:hover { background: rgba(255, 255, 255, 0.12); }
   width: 20px;
   height: 20px;
 }
+
+/* =========================================================
+   About Page — hero-free layout. New rules only, nothing
+   above this line has been modified.
+   ========================================================= */
+
+.about-intro {
+  max-width: var(--maxw);
+  margin: 0 auto;
+}
+
+.about-intro__grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.about-intro__text h1 {
+  font-size: clamp(1.7rem, 5vw, 2.5rem);
+}
+
+.about-intro__text p:last-child { margin-bottom: 0; }
+
+.about-intro__photo img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  border-radius: var(--radius);
+}
+
+.about-highlights {
+  background: var(--sky-pale);
+}
+
+.about-highlights__grid {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.75rem;
+}
+
+.about-highlight {
+  background: var(--cloud);
+  border-radius: var(--radius);
+  padding: 1.75rem 1.25rem;
+  text-align: center;
+  box-shadow: 0 6px 18px rgba(34, 49, 64, 0.06);
+}
+
+.about-highlight svg {
+  width: 34px;
+  height: 34px;
+  color: var(--sky-deep);
+  margin-bottom: 0.6rem;
+}
+
+.about-highlight h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.4rem;
+}
+
+.about-highlight p {
+  font-size: 0.85rem;
+  margin: 0;
+}
+
+.about-feature {
+  max-width: var(--maxw);
+  margin: 0 auto;
+}
+
+.about-feature__grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.about-feature__photo img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  border-radius: var(--radius);
+}
+
+.about-feature__text p:last-child { margin-bottom: 0; }
+
+@media (min-width: 800px) {
+  .about-intro__grid {
+    flex-direction: row;
+    align-items: center;
+    gap: 3.5rem;
+  }
+  .about-intro__text { flex: 1; }
+  .about-intro__photo { flex: 1; }
+  .about-intro__photo img { height: 340px; }
+
+  .about-highlights__grid { grid-template-columns: repeat(4, 1fr); }
+
+  .about-feature__grid {
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: 3.5rem;
+  }
+  .about-feature__photo { flex: 1; }
+  .about-feature__text { flex: 1; }
+  .about-feature__photo img { height: 340px; }
+}
+
+@media (min-width: 800px) {
+  .about-feature__grid--reverse { flex-direction: row; }
+}
+
+/* =========================================================
+   Contact Page — quick-info cards + message form.
+   New rules only, nothing above this line has been modified.
+   ========================================================= */
+
+.contact-cards__grid {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+}
+
+.contact-card {
+  background: var(--cloud);
+  border-radius: var(--radius);
+  padding: 1.75rem 1.25rem;
+  text-align: center;
+  box-shadow: 0 6px 18px rgba(34, 49, 64, 0.06);
+}
+
+.contact-card svg {
+  width: 30px;
+  height: 30px;
+  color: var(--sky-deep);
+  margin-bottom: 0.6rem;
+}
+
+.contact-card h3 {
+  font-size: 1.05rem;
+  margin-bottom: 0.3rem;
+}
+
+.contact-card p {
+  font-size: 0.85rem;
+  margin: 0;
+}
+
+.contact-card p a {
+  color: var(--sky-deep);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.contact-card p a:hover { color: var(--sky); }
+
+.contact-card__socials {
+  display: flex;
+  justify-content: center;
+  gap: 0.6rem;
+  margin-top: 0.4rem;
+}
+
+.contact-card__socials a {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--sky-pale);
+  color: var(--sky-deep);
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.contact-card__socials a:hover {
+  background: var(--sky);
+  color: var(--cloud);
+}
+
+.contact-card__socials svg {
+  width: 18px;
+  height: 18px;
+  margin: 0;
+}
+
+.contact-form__box {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  background: var(--sky-pale);
+  border-radius: var(--radius);
+  padding: 2rem 1.5rem;
+  text-align: center;
+}
+
+.contact-form__note {
+  max-width: 32rem;
+  margin: 0 auto 1.5rem;
+}
+
+.contact-form__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  text-align: left;
+}
+
+.contact-form__grid input,
+.contact-form__grid textarea {
+  width: 100%;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--ink);
+  background: var(--cloud);
+  border: 1px solid rgba(34, 49, 64, 0.15);
+  border-radius: 8px;
+  padding: 0.85rem 1rem;
+}
+
+.contact-form__grid input:focus,
+.contact-form__grid textarea:focus {
+  outline: none;
+  border-color: var(--sky);
+}
+
+.contact-form__grid textarea {
+  resize: vertical;
+  grid-column: 1 / -1;
+}
+
+.contact-form__grid button {
+  grid-column: 1 / -1;
+  justify-self: center;
+  border: none;
+  cursor: pointer;
+}
+
+@media (min-width: 640px) {
+  .contact-form__grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (min-width: 900px) {
+  .contact-cards__grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* =========================================================
+   Contact Page — embedded map. New rules only, nothing
+   above this line has been modified.
+   ========================================================= */
+
+.contact-map__frame {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  height: 320px;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(34, 49, 64, 0.08);
+}
+
+.contact-map__frame iframe {
+  display: block;
+}
+
+.contact-map__cta {
+  max-width: var(--maxw);
+  margin: 1.5rem auto 0;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .contact-map__frame { height: 420px; }
+}
+
