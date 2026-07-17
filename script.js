@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (lightbox) {
     const lightboxImg = document.getElementById('lightboxImg');
     const lightboxClose = document.getElementById('lightboxClose');
-    const galleryItems = document.querySelectorAll('.polaroid[data-full]');
+    const galleryItems = document.querySelectorAll('.polaroid[data-full], .gallery-grid__item[data-full]');
 
     const openLightbox = (src, alt) => {
       lightboxImg.src = src;
@@ -59,6 +59,36 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') closeLightbox();
+    });
+  }
+
+  // Gallery filter tabs — only runs on pages that have the filter bar
+  const filters = document.getElementById('galleryFilters');
+  if (filters) {
+    const filterBtns = filters.querySelectorAll('.gallery-filters__btn');
+    const gridItems = document.querySelectorAll('.gallery-grid__item');
+    const emptyMsg = document.getElementById('galleryEmpty');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => {
+          b.classList.remove('is-active');
+          b.setAttribute('aria-pressed', 'false');
+        });
+        btn.classList.add('is-active');
+        btn.setAttribute('aria-pressed', 'true');
+
+        const filter = btn.dataset.filter;
+        let visibleCount = 0;
+
+        gridItems.forEach(item => {
+          const match = filter === 'all' || item.dataset.category === filter;
+          item.classList.toggle('is-filtered-out', !match);
+          if (match) visibleCount++;
+        });
+
+        if (emptyMsg) emptyMsg.hidden = visibleCount !== 0;
+      });
     });
   }
 
