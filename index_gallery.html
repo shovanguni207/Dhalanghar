@@ -12,7 +12,7 @@
 <body>
 
 <header class="nav">
-  <a href="#top" class="nav__mark">Dhalan Ghar</a>
+  <a href="index.html" class="nav__mark">Dhalan Ghar</a>
 
   <button class="nav__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
     <span></span><span></span><span></span>
@@ -20,10 +20,11 @@
 
   <nav class="nav__links" id="navLinks">
     <a href="index.html">Home</a>
+    <a href="index_about.html">About Us</a>
     <a href="index_Cottages.html">Cottages</a>
     <a href="index_gallery.html">Gallery</a>
     <a href="index_act.html">Activities</a>
-    <a href="#contact">Contact</a>
+    <a href="index_contact.html">Contact</a>
     <a href="#contact" class="nav__cta">Visit Us</a>
   </nav>
 </header>
@@ -38,86 +39,61 @@
       <p>Roses at the door, roofs stacked up the slope, and a terrace that clears by mid-morning.</p>
     </div>
 
-    <!-- OUTDOOR & GROUNDS -->
-    <div class="gallery__category" id="outdoor">
-      <div class="gallery__category-head">
-        <p class="eyebrow">Outdoor &amp; Grounds</p>
-        <h3>The cottages and the hillside</h3>
-      </div>
-      <div class="gallery__board">
-        <button class="polaroid" data-full="images/cottages-roses.jpeg">
-          <img src="images/cottages-roses.jpeg" alt="Green-roofed cottage with roses in the foreground">
-          <span class="polaroid__tape"></span>
-          <span class="polaroid__caption">Roses</span>
-        </button>
-
-        <button class="polaroid" data-full="images/cottages-hillside.jpeg">
-          <img src="images/cottages-hillside.jpeg" alt="Cottages stepping up the terraced hillside">
-          <span class="polaroid__tape"></span>
-          <span class="polaroid__caption">Hillside</span>
-        </button>
-
-        <button class="polaroid" data-full="images/WhatsApp Image 2026-07-10 at 8.51.18 AM.jpeg">
-          <img src="images/WhatsApp Image 2026-07-10 at 8.51.18 AM.jpeg" alt="View of the grounds around the cottages">
-          <span class="polaroid__tape"></span>
-          <span class="polaroid__caption">Garden Path</span>
-        </button>
-      </div>
+    <div class="gallery-filters" id="galleryFilters" role="tablist" aria-label="Filter gallery by category">
+      <button class="gallery-filters__btn is-active" data-filter="all" aria-pressed="true">All</button>
+      <button class="gallery-filters__btn" data-filter="grounds" aria-pressed="false">Grounds</button>
+      <button class="gallery-filters__btn" data-filter="terrace" aria-pressed="false">Terrace</button>
+      <button class="gallery-filters__btn" data-filter="interior" aria-pressed="false">Interior</button>
     </div>
 
-    <!-- TERRACE -->
-    <div class="gallery__category" id="terrace">
-      <div class="gallery__category-head">
-        <p class="eyebrow">The Terrace</p>
-        <h3>Above the clouds</h3>
-      </div>
-      <div class="gallery__board">
-        <button class="polaroid" data-full="images/terrace-new.jpeg">
-          <img src="images/terrace-new.jpeg" alt="Rooftop terrace seating overlooking mountains and clouds">
-          <span class="polaroid__tape"></span>
-          <span class="polaroid__caption">Above Clouds</span>
-        </button>
+    <div class="gallery-grid" id="galleryGrid">
+      <button class="gallery-grid__item" data-category="grounds" data-full="images/cottages-roses.jpeg">
+        <img src="images/cottages-roses.jpeg" alt="Green-roofed cottage with roses in the foreground" loading="lazy">
+        <span class="gallery-grid__caption">Roses</span>
+      </button>
 
-        <button class="polaroid" data-full="images/WhatsApp Image 2026-07-08 at 8.30.59 PM.jpeg">
-          <img src="images/WhatsApp Image 2026-07-08 at 8.30.59 PM.jpeg" alt="Terrace seating with a view of the hills">
-          <span class="polaroid__tape"></span>
-          <span class="polaroid__caption">Terrace</span>
-        </button>
+      <button class="gallery-grid__item" data-category="grounds" data-full="images/cottages-hillside.jpeg">
+        <img src="images/cottages-hillside.jpeg" alt="Cottages stepping up the terraced hillside" loading="lazy">
+        <span class="gallery-grid__caption">Hillside</span>
+      </button>
 
-       <button class="polaroid" data-full="images/WhatsApp Image 2026-07-08 at 8.36.52 PM.jpeg">
-          <img src="images/WhatsApp Image 2026-07-08 at 8.36.52 PM.jpeg" alt="View from the terrace">
-          <span class="polaroid__tape"></span>
-          <span class="polaroid__caption">The View</span>
-        </button>
-      </div>
+      <button class="gallery-grid__item" data-category="grounds" data-full="images/WhatsApp Image 2026-07-10 at 8.51.18 AM.jpeg">
+        <img src="images/WhatsApp Image 2026-07-10 at 8.51.18 AM.jpeg" alt="View of the grounds around the cottages" loading="lazy">
+        <span class="gallery-grid__caption">Garden Path</span>
+      </button>
+
+      <button class="gallery-grid__item" data-category="terrace" data-full="images/terrace-new.jpeg">
+        <img src="images/terrace-new.jpeg" alt="Rooftop terrace seating overlooking mountains and clouds" loading="lazy">
+        <span class="gallery-grid__caption">Above Clouds</span>
+      </button>
+
+      <button class="gallery-grid__item" data-category="terrace" data-full="images/WhatsApp Image 2026-07-08 at 8.30.59 PM.jpeg">
+        <img src="images/WhatsApp Image 2026-07-08 at 8.30.59 PM.jpeg" alt="Terrace seating with a view of the hills" loading="lazy">
+        <span class="gallery-grid__caption">Terrace</span>
+      </button>
+
+      <button class="gallery-grid__item" data-category="terrace" data-full="images/WhatsApp Image 2026-07-08 at 8.36.52 PM.jpeg">
+        <img src="images/WhatsApp Image 2026-07-08 at 8.36.52 PM.jpeg" alt="View from the terrace" loading="lazy">
+        <span class="gallery-grid__caption">The View</span>
+      </button>
+
+      <button class="gallery-grid__item" data-category="interior" data-full="images/WhatsApp Image 2026-07-10 at 8.51.27 AM.jpeg">
+        <img src="images/WhatsApp Image 2026-07-10 at 8.51.27 AM.jpeg" alt="Inside one of the cottages" loading="lazy">
+        <span class="gallery-grid__caption">Inside</span>
+      </button>
+
+      <button class="gallery-grid__item" data-category="interior" data-full="images/WhatsApp Image 2026-07-10 at 8.51.35 AM.jpeg">
+        <img src="images/WhatsApp Image 2026-07-10 at 8.51.35 AM.jpeg" alt="A corner of the cottage interior" loading="lazy">
+        <span class="gallery-grid__caption">Quiet Corner</span>
+      </button>
+
+      <button class="gallery-grid__item" data-category="interior" data-full="images/WhatsApp Image 2026-07-10 at 8.50.41 AM.jpeg">
+        <img src="images/WhatsApp Image 2026-07-10 at 8.50.41 AM.jpeg" alt="Bedroom inside the cottage" loading="lazy">
+        <span class="gallery-grid__caption">Bedroom</span>
+      </button>
     </div>
 
-    <!-- INTERIOR -->
-    <div class="gallery__category" id="interior">
-      <div class="gallery__category-head">
-        <p class="eyebrow">Interior</p>
-        <h3>Inside the cottages</h3>
-      </div>
-      <div class="gallery__board">
-        <button class="polaroid" data-full="images/WhatsApp Image 2026-07-10 at 8.51.27 AM.jpeg">
-          <img src="images/WhatsApp Image 2026-07-10 at 8.51.27 AM.jpeg" alt="Inside one of the cottages">
-          <span class="polaroid__tape"></span>
-          <span class="polaroid__caption">Inside</span>
-        </button>
-
-        <button class="polaroid" data-full="images/WhatsApp Image 2026-07-10 at 8.51.35 AM.jpeg">
-          <img src="images/WhatsApp Image 2026-07-10 at 8.51.35 AM.jpeg" alt="A corner of the cottage interior">
-          <span class="polaroid__tape"></span>
-          <span class="polaroid__caption">Quiet Corner</span>
-        </button>
-
-       <button class="polaroid" data-full="images/WhatsApp Image 2026-07-10 at 8.50.41 AM.jpeg">
-          <img src="images/WhatsApp Image 2026-07-10 at 8.50.41 AM.jpeg" alt="Bedroom inside the cottage">
-          <span class="polaroid__tape"></span>
-          <span class="polaroid__caption">Bedroom</span>
-        </button>
-      </div>
-    </div>
+    <p class="gallery-empty" id="galleryEmpty" hidden>No photos in this category yet.</p>
 
   </section>
 
@@ -147,7 +123,7 @@
         </a>
         <a class="contact__row" href="tel:+9779851343015">
           <svg viewBox="0 0 48 48"><path d="M14 8c2 4 3 8 3 10s-3 4-3 6c2 6 8 12 14 14 2 0 4-3 6-3s6 1 10 3c0 4-4 8-8 8-14 0-28-14-28-28 0-4 4-8 6-10z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
-          <div><span>Phone</span>+977 9851343015</div>
+          <div><span>WhatsApp</span>+977 9851343015</div>
         </a>
         <a class="contact__row" href="mailto:shankerzee@gmail.com">
           <svg viewBox="0 0 48 48"><rect x="6" y="10" width="36" height="28" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M6 12l18 15L42 12" fill="none" stroke="currentColor" stroke-width="2"/></svg>
@@ -168,7 +144,7 @@
 </main>
 
 <footer class="footer">
-  <p>Dhalan Ghar Agro Resort.</p>
+  <p>Dhalan Ghar Agro Resort · [tagline placeholder]</p>
 </footer>
 
 <script src="script.js"></script>
