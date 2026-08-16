@@ -2256,3 +2256,47 @@ a.contact__row:hover { background: rgba(255, 255, 255, 0.12); }
     letter-spacing: 0.08em;
   }
 }
+/* =========================================================
+   Dining Page — trimmed to a standalone menu page (hero CTA +
+   the full menu section sitting right under it, no intro/
+   signature-dish/contact filler). Appended block, nothing
+   above this line has been modified.
+   ========================================================= */
+
+/* Menu section now follows straight after the hero, so give it
+   proper breathing room on its own (it used to inherit spacing
+   from the intro/signature sections above it). */
+.menu {
+  padding: 3rem 1.25rem 4rem;
+}
+
+@media (min-width: 768px) {
+  .menu { padding: 4rem 1.5rem 5rem; }
+}
+
+/* Live "N dishes" counter next to the search box, filled in by
+   script.js as the person types or toggles veg-only. */
+.menu-search__count {
+  font-size: 0.78rem;
+  color: var(--ink-soft);
+  white-space: nowrap;
+  margin-left: 0.25rem;
+}
+
+.menu-search__count.is-zero { color: var(--menu-red, #B23A2E); }
+
+/* Dining hero photo — this shot is a close, wide table scene, so
+   the shared .hero object-position (tuned for the homepage photo)
+   crops it too tight on the taller hero. Reframe it here only. */
+.hero__img--dining {
+  object-position: 50% 30%;
+}
+
+@media (min-width: 768px) {
+  /* On a wide/short box the cover-crop trims top & bottom instead
+     of left & right, and 30% was landing on the empty furniture
+     instead of the plate — push the crop window down. */
+  .hero__img--dining {
+    object-position: 50% 75%;
+  }
+}
