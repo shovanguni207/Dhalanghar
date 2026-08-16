@@ -182,6 +182,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const vegToggle = document.getElementById('vegOnlyToggle');
   const catSections = document.querySelectorAll('.menu-cat');
   const emptyState = document.getElementById('menuEmpty');
+  const countEl = document.getElementById('menuCount');
 
   const applyFilters = () => {
     const query = (searchInput.value || '').trim().toLowerCase();
@@ -213,6 +214,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     if (emptyState) emptyState.classList.toggle('is-visible', anyVisible === 0);
+
+    if (countEl) {
+      const hasFilter = query.length > 0 || vegOnly;
+      countEl.textContent = hasFilter ? `${anyVisible} shown` : '';
+      countEl.classList.toggle('is-zero', hasFilter && anyVisible === 0);
+    }
   };
 
   searchInput.addEventListener('input', applyFilters);
